@@ -1,0 +1,30 @@
+{
+  "name": "cofffe-site",
+  "version": "1.0.0",
+  "description": "practice project for css",
+  "main": "index.js",
+  "scripts": {
+    "build:css": "tailwindcss -i ./src/input.css -o ./public/output.css --watch",
+    "start:dev": "live-server public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cnf166/cofffe-site.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cnf166/cofffe-site/issues"
+  },
+  "homepage": "https://github.com/cnf166/cofffe-site#readme",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.11",
+    "live-server": "^1.2.2"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.11"
+  }
+}
