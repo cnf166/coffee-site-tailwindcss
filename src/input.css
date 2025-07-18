@@ -2,7 +2,18 @@
 @import "tailwindcss";
 
 @theme {
+    
+    /* Fonts */
     --font-family-karla: 'Karla', sans-serif;
+
+
+    /* Colors */
+    --color-coffee-100: #E8D6D0;
+    --color-coffee-200: #C89F94;
+    --color-coffee-300: #A25F4B;
+    --color-coffee-400: #744838;
+
+    /* Animation */
     --animate-slide_down: slide_down .3s ease-in-out;
     @keyframes slide_down {
         0% {
@@ -11,7 +22,7 @@
         100% {
             transform: translateY(0);
         }
-  }
+    }
 }
 
 .custom-top-menu-expand {
@@ -20,7 +31,7 @@
 
 .custom-top-menu-items {
     @apply cursor-pointer py-1 hover:text-gray-900 relative after:lg:absolute after:lg:bottom-0 after:lg:left-0
-     after:lg:bg-orange-200 after:lg:h-0.5 after:lg:w-0 hover:after:lg:w-full after:lg:transition-all after:lg:duration-300;
+     after:lg:bg-coffee-200 after:lg:h-0.5 after:lg:w-0 hover:after:lg:w-full after:lg:transition-all after:lg:duration-300;
 }
 
 .custom-top-menu-items-active {
@@ -33,4 +44,16 @@
 
 .custom-icon-circle {
     @apply text-xs text-center rounded-full px-1.5;
+}
+
+.custom-subheadline {
+    @apply flex justify-center items-center mb-24;
+}
+
+.custom-subheadline-deco {
+    @apply w-8 h-px bg-gray-400;
+}
+
+.custom-subheadline-label {
+    @apply uppercase tracking-widest mx-4 font-medium text-center text-[15px];
 }
