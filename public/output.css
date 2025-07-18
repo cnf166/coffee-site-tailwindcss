@@ -8,9 +8,10 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
-    --color-orange-200: oklch(90.1% 0.076 70.697);
     --color-orange-500: oklch(70.5% 0.213 47.604);
+    --color-gray-400: oklch(70.7% 0.022 261.325);
     --color-gray-500: oklch(55.1% 0.027 264.364);
+    --color-gray-600: oklch(44.6% 0.03 256.802);
     --color-gray-900: oklch(21% 0.034 264.665);
     --color-gray-950: oklch(13% 0.028 261.692);
     --color-white: #fff;
@@ -26,17 +27,23 @@
     --text-lg--line-height: calc(1.75 / 1.125);
     --text-2xl: 1.5rem;
     --text-2xl--line-height: calc(2 / 1.5);
+    --text-3xl: 1.875rem;
+    --text-3xl--line-height: calc(2.25 / 1.875);
     --text-6xl: 3.75rem;
     --text-6xl--line-height: 1;
     --font-weight-normal: 400;
     --font-weight-medium: 500;
     --font-weight-semibold: 600;
     --tracking-wider: 0.05em;
+    --tracking-widest: 0.1em;
     --default-transition-duration: 150ms;
     --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
     --font-family-karla: 'Karla', sans-serif;
+    --color-coffee-200: #C89F94;
+    --color-coffee-300: #A25F4B;
+    --color-coffee-400: #744838;
     --animate-slide_down: slide_down .3s ease-in-out;
   }
 }
@@ -285,8 +292,14 @@
   .px-8 {
     padding-inline: calc(var(--spacing) * 8);
   }
+  .px-16 {
+    padding-inline: calc(var(--spacing) * 16);
+  }
   .py-4 {
     padding-block: calc(var(--spacing) * 4);
+  }
+  .py-32 {
+    padding-block: calc(var(--spacing) * 32);
   }
   .text-center {
     text-align: center;
@@ -297,6 +310,10 @@
   .text-2xl {
     font-size: var(--text-2xl);
     line-height: var(--tw-leading, var(--text-2xl--line-height));
+  }
+  .text-3xl {
+    font-size: var(--text-3xl);
+    line-height: var(--tw-leading, var(--text-3xl--line-height));
   }
   .text-6xl {
     font-size: var(--text-6xl);
@@ -318,6 +335,14 @@
     font-size: var(--text-xs);
     line-height: var(--tw-leading, var(--text-xs--line-height));
   }
+  .leading-7 {
+    --tw-leading: calc(var(--spacing) * 7);
+    line-height: calc(var(--spacing) * 7);
+  }
+  .leading-10 {
+    --tw-leading: calc(var(--spacing) * 10);
+    line-height: calc(var(--spacing) * 10);
+  }
   .font-medium {
     --tw-font-weight: var(--font-weight-medium);
     font-weight: var(--font-weight-medium);
@@ -334,8 +359,14 @@
     --tw-tracking: var(--tracking-wider);
     letter-spacing: var(--tracking-wider);
   }
+  .text-coffee-300 {
+    color: var(--color-coffee-300);
+  }
   .text-gray-500 {
     color: var(--color-gray-500);
+  }
+  .text-gray-600 {
+    color: var(--color-gray-600);
   }
   .text-gray-950 {
     color: var(--color-gray-950);
@@ -349,17 +380,61 @@
   .opacity-90 {
     opacity: 90%;
   }
-  .hover\:opacity-70 {
-    &:hover {
-      @media (hover: hover) {
-        opacity: 70%;
-      }
+  .after\:absolute {
+    &::after {
+      content: var(--tw-content);
+      position: absolute;
     }
   }
-  .hover\:opacity-90 {
+  .after\:-bottom-2 {
+    &::after {
+      content: var(--tw-content);
+      bottom: calc(var(--spacing) * -2);
+    }
+  }
+  .after\:left-0 {
+    &::after {
+      content: var(--tw-content);
+      left: calc(var(--spacing) * 0);
+    }
+  }
+  .after\:h-0\.5 {
+    &::after {
+      content: var(--tw-content);
+      height: calc(var(--spacing) * 0.5);
+    }
+  }
+  .after\:w-full {
+    &::after {
+      content: var(--tw-content);
+      width: 100%;
+    }
+  }
+  .after\:bg-coffee-300 {
+    &::after {
+      content: var(--tw-content);
+      background-color: var(--color-coffee-300);
+    }
+  }
+  .after\:transition-all {
+    &::after {
+      content: var(--tw-content);
+      transition-property: all;
+      transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+      transition-duration: var(--tw-duration, var(--default-transition-duration));
+    }
+  }
+  .after\:duration-300 {
+    &::after {
+      content: var(--tw-content);
+      --tw-duration: 300ms;
+      transition-duration: 300ms;
+    }
+  }
+  .hover\:text-coffee-400 {
     &:hover {
       @media (hover: hover) {
-        opacity: 90%;
+        color: var(--color-coffee-400);
       }
     }
   }
@@ -368,6 +443,21 @@
       @media (hover: hover) {
         opacity: 95%;
       }
+    }
+  }
+  .hover\:after\:bg-coffee-400 {
+    &:hover {
+      @media (hover: hover) {
+        &::after {
+          content: var(--tw-content);
+          background-color: var(--color-coffee-400);
+        }
+      }
+    }
+  }
+  .md\:px-32 {
+    @media (width >= 48rem) {
+      padding-inline: calc(var(--spacing) * 32);
     }
   }
   .lg\:flex {
@@ -408,6 +498,16 @@
   .lg\:gap-7 {
     @media (width >= 64rem) {
       gap: calc(var(--spacing) * 7);
+    }
+  }
+  .lg\:px-63 {
+    @media (width >= 64rem) {
+      padding-inline: calc(var(--spacing) * 63);
+    }
+  }
+  .xl\:px-96 {
+    @media (width >= 80rem) {
+      padding-inline: calc(var(--spacing) * 96);
     }
   }
 }
@@ -462,7 +562,7 @@
   &::after {
     content: var(--tw-content);
     @media (width >= 64rem) {
-      background-color: var(--color-orange-200);
+      background-color: var(--color-coffee-200);
     }
   }
   &::after {
@@ -506,6 +606,31 @@
   font-size: var(--text-xs);
   line-height: var(--tw-leading, var(--text-xs--line-height));
 }
+.custom-subheadline {
+  margin-bottom: calc(var(--spacing) * 24);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.custom-subheadline-deco {
+  height: 1px;
+  width: calc(var(--spacing) * 8);
+  background-color: var(--color-gray-400);
+}
+.custom-subheadline-label {
+  margin-inline: calc(var(--spacing) * 4);
+  text-align: center;
+  font-size: 15px;
+  --tw-font-weight: var(--font-weight-medium);
+  font-weight: var(--font-weight-medium);
+  --tw-tracking: var(--tracking-widest);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+}
+@property --tw-leading {
+  syntax: "*";
+  inherits: false;
+}
 @property --tw-font-weight {
   syntax: "*";
   inherits: false;
@@ -534,6 +659,7 @@
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
+      --tw-leading: initial;
       --tw-font-weight: initial;
       --tw-tracking: initial;
       --tw-content: "";
