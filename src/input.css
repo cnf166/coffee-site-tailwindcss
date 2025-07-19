@@ -15,12 +15,22 @@
 
     /* Animation */
     --animate-slide_down: slide_down .3s ease-in-out;
+    --animate-fade_in: fade_in .5s ease-in-out;
     @keyframes slide_down {
         0% {
             transform: translateY(-100%);
         }
         100% {
             transform: translateY(0);
+        }
+    }
+
+    @keyframes fade_in {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
         }
     }
 }
@@ -57,3 +67,12 @@
 .custom-subheadline-label {
     @apply uppercase tracking-widest mx-4 font-medium text-center text-[15px];
 }
+
+.custom-button-label {
+    @apply uppercase bg-white text-gray-950 tracking-wider py-4 px-6 text-xs font-semibold cursor-pointer hover:opacity-95;
+}
+
+.hover\:photo-card-click:hover {
+    @apply hover:bg-gray-700 hover:bg-gray-700/10  hover:transition-all hover:ease-in-out hover:duration-100;
+}
+
