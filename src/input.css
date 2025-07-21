@@ -79,6 +79,11 @@
     @apply uppercase bg-gray-950 text-white tracking-wider py-4 px-6 text-xs font-semibold cursor-pointer hover:opacity-95;
 }
 
+
+.child {
+    @apply w-screen relative left-[calc(-50vw+50%)];
+}
+
 .hover\:photo-card-click:hover {
     @apply hover:bg-gray-700 hover:bg-gray-700/10  hover:transition-all hover:ease-in-out hover:duration-100;
 }
