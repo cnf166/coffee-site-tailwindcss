@@ -3,6 +3,9 @@
 
 @theme {
     
+    /* Screen Sizes */
+    --breakpoint-xs: 30rem;
+    
     /* Fonts */
     --font-family-karla: 'Karla', sans-serif;
 
@@ -70,6 +73,10 @@
 
 .custom-button-label {
     @apply uppercase bg-white text-gray-950 tracking-wider py-4 px-6 text-xs font-semibold cursor-pointer hover:opacity-95;
+}
+
+.custom-dark-button-label {
+    @apply uppercase bg-gray-950 text-white tracking-wider py-4 px-6 text-xs font-semibold cursor-pointer hover:opacity-95;
 }
 
 .hover\:photo-card-click:hover {
