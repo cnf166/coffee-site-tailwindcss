@@ -38,6 +38,50 @@
     }
 }
 
+/* Body reset */
+@layer base {
+    body {
+        @apply m-0;
+    }
+}
+
+/* Custom components */
+@layer components {
+    .content-wrapper {
+        @apply h-screen overflow-x-hidden overflow-y-auto;
+    }
+
+    .parallax,
+    .static {
+        @apply flex items-center justify-center relative;
+    }
+
+    .parallax {
+        @apply h-screen;
+    }
+
+    .static {
+        @apply h-[80vh] z-[999];
+        background: var(--color-dark-gradient);
+    }
+
+    .parallax > .custom-parallax-image {
+        @apply absolute w-full h-full;
+    }
+
+    .content {
+        @apply text-[6rem];
+    }
+
+    .sub-content {
+        @apply text-[2rem] text-center;
+    }
+
+    .sub-content a {
+        @apply text-inherit text-[1.5rem] no-underline hover:text-accent;
+    }
+}
+
 .custom-top-menu-expand {
     @apply absolute top-10 z-10 w-full bg-white text-center animate-slide_down;
 }
