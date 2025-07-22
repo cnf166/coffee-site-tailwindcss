@@ -68,18 +68,6 @@
     .parallax > .custom-parallax-image {
         @apply absolute w-full h-full;
     }
-
-    .content {
-        @apply text-[6rem];
-    }
-
-    .sub-content {
-        @apply text-[2rem] text-center;
-    }
-
-    .sub-content a {
-        @apply text-inherit text-[1.5rem] no-underline hover:text-accent;
-    }
 }
 
 .custom-top-menu-expand {

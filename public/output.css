@@ -224,6 +224,9 @@
   .mx-auto {
     margin-inline: auto;
   }
+  .my-6 {
+    margin-block: calc(var(--spacing) * 6);
+  }
   .my-8 {
     margin-block: calc(var(--spacing) * 8);
   }
@@ -275,6 +278,9 @@
   .h-\[280px\] {
     height: 280px;
   }
+  .h-\[300px\] {
+    height: 300px;
+  }
   .h-\[380px\] {
     height: 380px;
   }
@@ -283,9 +289,6 @@
   }
   .h-\[530px\] {
     height: 530px;
-  }
-  .h-\[1000px\] {
-    height: 1000px;
   }
   .h-full {
     height: 100%;
@@ -417,6 +420,15 @@
   .bg-\[url\(\'\.\/assets\/slider_background\.jpg\'\)\] {
     background-image: url('./assets/slider_background.jpg');
   }
+  .bg-\[url\(\'\.\/assets\/sr1\.jpg\'\)\] {
+    background-image: url('./assets/sr1.jpg');
+  }
+  .bg-\[url\(\'\.\/assets\/sr2\.jpg\'\)\] {
+    background-image: url('./assets/sr2.jpg');
+  }
+  .bg-\[url\(\'\.\/assets\/sr3\.jpg\'\)\] {
+    background-image: url('./assets/sr3.jpg');
+  }
   .bg-cover {
     background-size: cover;
   }
@@ -459,6 +471,9 @@
   .text-center {
     text-align: center;
   }
+  .text-left {
+    text-align: left;
+  }
   .font-family-karla {
     font-family: var(--font-family-karla);
   }
@@ -497,6 +512,9 @@
   .text-xs {
     font-size: var(--text-xs);
     line-height: var(--tw-leading, var(--text-xs--line-height));
+  }
+  .text-\[13px\] {
+    font-size: 13px;
   }
   .leading-7 {
     --tw-leading: calc(var(--spacing) * 7);
@@ -609,6 +627,13 @@
       content: var(--tw-content);
       --tw-duration: 300ms;
       transition-duration: 300ms;
+    }
+  }
+  .hover\:text-coffee-300 {
+    &:hover {
+      @media (hover: hover) {
+        color: var(--color-coffee-300);
+      }
     }
   }
   .hover\:text-coffee-400 {
@@ -762,6 +787,37 @@
     @media (width >= 80rem) {
       padding-left: calc(var(--spacing) * 11);
     }
+  }
+}
+@layer base {
+  body {
+    margin: calc(var(--spacing) * 0);
+  }
+}
+@layer components {
+  .content-wrapper {
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+  .parallax, .static {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .parallax {
+    height: 100vh;
+  }
+  .static {
+    z-index: 999;
+    height: 80vh;
+    background: var(--color-dark-gradient);
+  }
+  .parallax > .custom-parallax-image {
+    position: absolute;
+    height: 100%;
+    width: 100%;
   }
 }
 .custom-top-menu-expand {
