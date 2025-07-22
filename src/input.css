@@ -112,6 +112,9 @@
     @apply uppercase bg-gray-950 text-white tracking-wider py-4 px-6 text-xs font-semibold cursor-pointer hover:opacity-95;
 }
 
+.custom-link-footer {
+    @apply hover:text-coffee-300 duration-200;
+}
 
 .child {
     @apply w-screen relative left-[calc(-50vw+50%)];
